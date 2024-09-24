@@ -74,7 +74,7 @@ function CartForm() {
   if (loading || isPending) return <Spinner></Spinner>;
 
   return (
-    <div className=" m-12 flex items-center h-full w-full justify-center flex-col gap-16 p-20 ">
+    <div className="flex items-center h-full w-full justify-center flex-col gap-16 p-20 ">
       <form
         onSubmit={handleSubmit(submit)}
         className="flex items-center h-full justify-center flex-col gap-6"
