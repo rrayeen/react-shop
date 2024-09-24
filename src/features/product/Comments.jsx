@@ -16,7 +16,7 @@ function Comments({ item }) {
   if (isDeleting || loading) return <Spinner></Spinner>;
 
   return (
-    <div className="flex items-center border rounded-3xl justify-between">
+    <div className="border rounded-3xl ">
       <div className="flex gap-3 p-6 flex-col">
         <div className="flex items-center gap-5">
           <img
