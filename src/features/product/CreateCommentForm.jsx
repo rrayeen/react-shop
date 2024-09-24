@@ -14,7 +14,7 @@ function CreateCommentForm({ id, setOpenForm }) {
     reset,
     formState: { errors },
   } = useForm({
-    defaultValues: { area: "nice job ma nigga" },
+    defaultValues: { area: "" },
   });
   const { isCommenting, addNewComment } = useAddComment();
   function submit(data) {
