@@ -2,12 +2,12 @@ import { useDispatch, useSelector } from "react-redux";
 import CartItem from "../features/cart/CartItem";
 import Button from "../ui/Button";
 
+import { GrClear } from "react-icons/gr";
+import { IoBagCheckOutline } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
 import { clearCart } from "../features/cart/cartSlice";
-import { IoBagCheckOutline } from "react-icons/io5";
-import { GrClear } from "react-icons/gr";
-import Empty from "../ui/Empty";
 import GoBackButton from "../ui/GoBackButton";
+import EmptyState from "../ui/EmptyState";
 
 function Cart() {
   const navigate = useNavigate();
@@ -19,16 +19,7 @@ function Cart() {
     dispatch(clearCart());
   }
   const { cart } = useSelector((store) => store.cartSlice);
-  if (!cart.length)
-    return (
-      <>
-        <div className="flex items-center justify-between p-4 bg-transparent">
-          <GoBackButton></GoBackButton>
-          <GoBackButton type="home"></GoBackButton>
-        </div>
-        <Empty></Empty>;
-      </>
-    );
+  if (!cart.length) return <EmptyState />;
 
   return (
     <>

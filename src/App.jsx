@@ -1,17 +1,17 @@
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import NotFoundPage from "./pages/NotFoundPage";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import { Suspense, lazy } from "react";
 import { Toaster } from "react-hot-toast";
 import { Provider } from "react-redux";
-import store from "./store";
-import Singup from "./pages/Singup";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Login from "./pages/Login";
+import NotFoundPage from "./pages/NotFoundPage";
+import Singup from "./pages/Singup";
+import store from "./store";
 import Account from "./ui/Account";
 import AppLayout from "./ui/AppLayout";
-import ProtectedRoute from "./ui/ProtectedRoute";
 import LoginRoute from "./ui/LoginRoute";
-import { Suspense, lazy } from "react";
+import ProtectedRoute from "./ui/ProtectedRoute";
 import Spinner from "./ui/Spinner";
 
 const Home = lazy(() => import("./pages/Home"));

@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
-import { getAllRecipes } from "../../services/apiSupabase";
 import { useParams } from "react-router-dom";
+import { getAllRecipes } from "../../services/apiSupabase";
 
 export function GetRecipes() {
   const { id } = useParams();

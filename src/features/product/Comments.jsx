@@ -1,8 +1,8 @@
+import { FaTrash } from "react-icons/fa";
 import Button from "../../ui/Button";
-import { useDeleteComment } from "./deleteComment";
 import Spinner from "../../ui/Spinner";
 import { GetUser } from "../auth/GetUser";
-import { FaTrash } from "react-icons/fa";
+import { useDeleteComment } from "./deleteComment";
 
 function Comments({ item }) {
   const { isPending: loading, id: userId } = GetUser();
@@ -16,7 +16,7 @@ function Comments({ item }) {
   if (isDeleting || loading) return <Spinner></Spinner>;
 
   return (
-    <div className="border rounded-3xl ">
+    <div className="border  rounded-3xl ">
       <div className="flex gap-3 p-6 flex-col">
         <div className="flex items-center gap-5">
           <img
@@ -28,14 +28,15 @@ function Comments({ item }) {
         </div>
         <p className=" ml-16 row-span-2 col-span-2 ">{userComment}</p>
       </div>
-      <div className="mr-24">
+      <div className=" mr-6 mb-2 flex justify-end   ">
         {commentUserId !== userId || (
           <Button
             type="danger"
             others="flex items-center justify-between gap-1"
             onClick={handleDelete}
           >
-            Delete <FaTrash />
+            <p className="hidden md:block">Delete</p>
+            <FaTrash />
           </Button>
         )}
       </div>

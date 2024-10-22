@@ -1,6 +1,6 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { singup } from "../../services/apiSupabase";
 import toast from "react-hot-toast";
+import { singup } from "../../services/apiSupabase";
 
 export function useSingUp() {
   const queryClient = useQueryClient();

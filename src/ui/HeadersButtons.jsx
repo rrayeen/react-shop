@@ -1,9 +1,9 @@
-import Button from "./Button";
-import { Link } from "react-router-dom";
 import { FaHistory, FaShoppingCart } from "react-icons/fa";
 import { HiOutlineLogout } from "react-icons/hi";
-import { useLogout } from "../features/auth/logout";
+import { Link } from "react-router-dom";
 import { GetUser } from "../features/auth/GetUser";
+import { useLogout } from "../features/auth/logout";
+import Button from "./Button";
 import Spinner from "./Spinner";
 
 function HeadersButtons({ others = "" }) {

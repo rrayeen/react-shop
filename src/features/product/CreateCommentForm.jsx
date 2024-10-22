@@ -1,9 +1,10 @@
 import { useForm } from "react-hook-form";
 import Button from "../../ui/Button";
 
-import { useAddComment } from "./addComment";
-import { GetUser } from "../auth/GetUser";
 import Spinner from "../../ui/Spinner";
+import { GetUser } from "../auth/GetUser";
+import { useAddComment } from "./addComment";
+import removeExtraSpaces from "../../hooks/removeExtraSpaces";
 
 function CreateCommentForm({ id, setOpenForm }) {
   const { isPending, username, icon, id: userId } = GetUser();
@@ -22,7 +23,7 @@ function CreateCommentForm({ id, setOpenForm }) {
       productId: id,
       userIcon: icon,
       userName: username,
-      userComment: data.area,
+      userComment: removeExtraSpaces(data.area),
       userId,
     };
     addNewComment(newComment, {
@@ -46,7 +47,8 @@ function CreateCommentForm({ id, setOpenForm }) {
           disabled={isCommenting}
           {...register("area", {
             required: "this field must be true",
-            validate: (value) => value.length > 10 || "comment must be >10",
+            validate: (value) =>
+              removeExtraSpaces(value).length > 10 || "comment must be >10",
           })}
         ></textarea>
         {errors.area && (

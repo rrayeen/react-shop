@@ -1,11 +1,11 @@
-import Button from "../ui/Button";
-import Empty from "../ui/Empty";
-import { GetRecipes } from "../features/cart/getRecipes";
-import Spinner from "../ui/Spinner";
-import { formatCurrency } from "../services/Helper";
 import { TiArrowBack } from "react-icons/ti";
 import { useNavigate } from "react-router-dom";
+import { GetRecipes } from "../features/cart/getRecipes";
+import { formatCurrency } from "../services/Helper";
+import Button from "../ui/Button";
+import Empty from "../ui/Empty";
 import GoBackButton from "../ui/GoBackButton";
+import Spinner from "../ui/Spinner";
 
 function Recipe() {
   // Get the current date

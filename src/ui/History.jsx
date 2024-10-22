@@ -1,9 +1,9 @@
-import { Link, useParams } from "react-router-dom";
-import Spinner from "./Spinner";
-import { GetAllHistory } from "../features/history/getAllHistory";
 import { RiArrowRightUpLine } from "react-icons/ri";
-import Empty from "./Empty";
+import { Link, useParams } from "react-router-dom";
+import { GetAllHistory } from "../features/history/getAllHistory";
 import GoBackButton from "./GoBackButton";
+import Spinner from "./Spinner";
+import EmptyState from "./EmptyState";
 
 function History() {
   const { id } = useParams();
@@ -11,16 +11,7 @@ function History() {
   const { data: allRecipe, isPending } = GetAllHistory(id);
 
   if (isPending) return <Spinner />;
-  if (!allRecipe.length)
-    return (
-      <>
-        <div className="flex items-center justify-between p-4 bg-transparent">
-          <GoBackButton></GoBackButton>
-          <GoBackButton type="home"></GoBackButton>
-        </div>
-        <Empty></Empty>;
-      </>
-    );
+  if (!allRecipe.length) return <EmptyState />;
 
   return (
     <>
