@@ -1,8 +1,8 @@
+import { LuTrash } from "react-icons/lu";
 import { useDispatch } from "react-redux";
+import { formatCurrency } from "../../services/Helper";
 import Button from "../../ui/Button";
 import { decreaseQuantity, increaseQuantity, removeItem } from "./cartSlice";
-import { formatCurrency } from "../../services/Helper";
-import { LuTrash } from "react-icons/lu";
 
 function CartItem({ item }) {
   const { id, image, name, cartQuantity: quantity, price } = item;

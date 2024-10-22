@@ -1,10 +1,10 @@
-import { Link, useNavigate } from "react-router-dom";
-import styles from "./Login.module.css";
 import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
+import { Link, useNavigate } from "react-router-dom";
+import { useNewUser } from "../features/auth/addUserInfo";
 import { useSingUp } from "../features/auth/singup";
 import Spinner from "../ui/Spinner";
-import { useNewUser } from "../features/auth/addUserInfo";
-import toast from "react-hot-toast";
+import styles from "./Login.module.css";
 
 function Login() {
   const {

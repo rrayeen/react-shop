@@ -1,10 +1,10 @@
 import { useQuery } from "@tanstack/react-query";
+import { useEffect, useState } from "react";
+import { useParams, useSearchParams } from "react-router-dom";
 import CategorieItem from "../features/categorie/CategorieItem";
 import { getAllProducts } from "../services/apiSupabase";
-import Spinner from "../ui/Spinner";
-import { useParams, useSearchParams } from "react-router-dom";
-import { useEffect, useState } from "react";
 import GoBackButton from "../ui/GoBackButton";
+import Spinner from "../ui/Spinner";
 
 function Categorie() {
   const { name } = useParams("name");
@@ -83,7 +83,7 @@ function Categorie() {
           <option value="price-desc">Price Desc</option>
         </select>
       </div>
-      <div className="  py-12 px-12 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 grid-rows-[auto] gap-24 ">
+      <div className="  py-12 px-6 lg:px-12 grid grid-cols-1 md:grid-cols-2  2xl:grid-cols-3 grid-rows-[auto] gap-8  lg:gap-24 ">
         {sortedData.map((el) => (
           <CategorieItem key={el.id} item={el}></CategorieItem>
         ))}

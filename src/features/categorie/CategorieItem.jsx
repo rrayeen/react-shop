@@ -1,7 +1,7 @@
+import { PiArrowCircleUpRightBold } from "react-icons/pi";
 import { Link } from "react-router-dom";
 import { formatCurrency } from "../../services/Helper";
 import Button from "../../ui/Button";
-import { PiArrowCircleUpRightBold } from "react-icons/pi";
 
 function CategorieItem({ item }) {
   const { name, image, price, id, quantity } = item;

@@ -1,6 +1,6 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { login } from "../../services/apiSupabase";
 import toast from "react-hot-toast";
+import { login } from "../../services/apiSupabase";
 
 export function GetLogin() {
   const queryClient = useQueryClient();
