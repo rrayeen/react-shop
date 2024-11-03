@@ -22,7 +22,7 @@ export default {
         "pomp-power": "#8F6593",
       },
       backgroundImage: {
-        "home-page": "url('./homepage.png')",
+        "home-page": "url('/homepage.png')",
       },
     },
   },
